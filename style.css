@@ -1,0 +1,454 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pangolin', sans-serif;
+    background-color: #fffdf0;
+    background-image: linear-gradient(#ffe6e6 1px, transparent 1px), linear-gradient(90deg, #ffe6e6 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #4a1c1c;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes roi-tu-do {
+    0% { transform: translate(0, -10vh) rotate(0deg); opacity: 1; }
+    25% { transform: translate(20px, 20vh) rotate(90deg); }
+    50% { transform: translate(-20px, 50vh) rotate(180deg); }
+    75% { transform: translate(15px, 80vh) rotate(270deg); }
+    100% { transform: translate(0, 100vh) rotate(360deg); opacity: 0; }
+}
+
+.hoa-dao {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    animation-name: roi-tu-do;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.hoa-dao::after {
+    content: "🌸";
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
+.hoa-1 { left: 5%; animation-duration: 12s; animation-delay: 0s; font-size: 20px; }
+.hoa-2 { left: 15%; animation-duration: 15s; animation-delay: 2s; font-size: 28px; }
+.hoa-3 { left: 25%; animation-duration: 10s; animation-delay: 4s; font-size: 22px; }
+.hoa-4 { left: 35%; animation-duration: 18s; animation-delay: 1s; font-size: 26px; }
+.hoa-5 { left: 45%; animation-duration: 14s; animation-delay: 5s; font-size: 20px; }
+.hoa-6 { left: 55%; animation-duration: 20s; animation-delay: 3s; font-size: 30px; }
+.hoa-7 { left: 65%; animation-duration: 11s; animation-delay: 6s; font-size: 24px; }
+.hoa-8 { left: 75%; animation-duration: 13s; animation-delay: 2s; font-size: 28px; }
+.hoa-9 { left: 85%; animation-duration: 16s; animation-delay: 0s; font-size: 22px; }
+.hoa-10 { left: 95%; animation-duration: 19s; animation-delay: 4s; font-size: 26px; }
+
+@keyframes lac-lu {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+.den-long {
+    position: fixed;
+    top: 0;
+    font-size: 60px;
+    z-index: 1000;
+    transform-origin: top center;
+    animation: lac-lu 3s infinite ease-in-out;
+    user-select: none;
+    pointer-events: none;
+    filter: drop-shadow(2px 5px 5px rgba(0,0,0,0.3));
+}
+
+.den-long.trai { left: 3%; }
+.den-long.phai { right: 3%; animation-delay: 1.5s; }
+
+#header {
+    background: linear-gradient(rgba(183, 28, 28, 0.85), rgba(211, 47, 47, 0.9)), url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffeb3b;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 8px solid #ffcc00;
+    border-top: 5px double #ff9800;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+#header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    margin: 0;
+    text-shadow: 3px 3px 5px #330000;
+    letter-spacing: 2px;
+}
+
+#content {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.cot-trai {
+    width: 65%;
+    float: left;
+    padding-right: 30px;
+}
+
+.cot-phai {
+    width: 35%;
+    float: right;
+    background-color: rgba(255, 249, 196, 0.4);
+    border-left: 2px dashed #ffb74d;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+.baiviet {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px dashed #ffab91;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.baiviet:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.15);
+}
+
+.baiviet::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 15px;
+    background-color: #fbc02d;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.tieude-bai {
+    color: #d32f2f;
+    font-size: 30px;
+    margin-top: 0;
+    padding-bottom: 5px;
+    font-family: 'Dancing Script', cursive;
+    border-bottom: 2px solid #ffcc80;
+    display: inline-block;
+}
+
+.cau-doi-container {
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    color: #b71c1c;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.cau-doi {
+    width: 45%;
+    float: left;
+    padding: 20px 5px;
+    border: 2px solid #d32f2f;
+    border-radius: 8px;
+    background: #ffebee;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.khung-anh {
+    background: white;
+    padding: 10px 10px 25px 10px;
+    box-shadow: 3px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 2px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.khung-anh img, .khung-anh iframe, .khung-anh video {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+}
+
+.khung-anh p {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #b71c1c;
+}
+
+.nghieng-nhe-trai { transform: rotate(-1.5deg); }
+.nghieng-trai { transform: rotate(-3deg); }
+.nghieng-phai { transform: rotate(3deg); }
+
+.khung-anh:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10;
+    box-shadow: 5px 8px 20px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.form-nhap {
+    background-color: #fffde7;
+    padding: 20px;
+    border: 2px solid #fbc02d;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+input[type=text], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ffb74d;
+    border-radius: 5px;
+    font-family: 'Pangolin', sans-serif;
+}
+
+.btn-submit {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Pangolin', sans-serif;
+}
+
+.btn-reset {
+    background-color: #fff;
+    color: #d32f2f;
+    padding: 8px 25px;
+    border: 2px solid #d32f2f;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Pangolin', sans-serif;
+}
+
+#footer {
+    clear: both;
+    background: linear-gradient(to bottom, #4e342e, #3e2723);
+    color: #ffecb3;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    font-size: 15px;
+    border-top: 8px double #ffca28;
+}
+
+@media (max-width: 800px) {
+    .cot-trai, .cot-phai { width: 100%; float: none; padding-right: 0; border-left: none; }
+    #header h1 { font-size: 40px; }
+    .cau-doi { width: 100%; float: none; margin-bottom: 10px; }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5000;
+    background: linear-gradient(90deg, #b71c1c, #d32f2f);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    animation: slideDown 0.8s ease-out;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    background: #ffeb3b;
+    color: #b71c1c;
+}
+.navbar:hover {
+    background: linear-gradient(90deg, #b71c1c, #d32f2f);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+body {
+    padding-top: 90px;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+.lixi-section {
+    padding-top: 120px;
+    text-align: center;
+    margin: 0px 0 60px 0;
+}
+
+.lixi-wrapper {
+    width: 130px;
+    height: 160px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.lixi-box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #d32f2f, #b71c1c);
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.3),
+        inset 0 0 15px rgba(255,255,255,0.2);
+    border: 3px solid gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: swing 2s infinite ease-in-out;
+    transform-origin: top center;
+    transition: 0.3s;
+}
+
+.lixi-box::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    right: 10px;
+    bottom: 15px;
+    border: 2px solid gold;
+    border-radius: 8px;
+}
+
+.chu-loc {
+    font-size: 38px;
+    color: gold;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255,215,0,0.8);
+    font-family: 'Dancing Script', cursive;
+}
+
+@keyframes swing {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+/* Hover phát sáng */
+.lixi-box:hover {
+    box-shadow: 
+        0 15px 35px rgba(255,0,0,0.5),
+        0 0 20px gold;
+    transform: scale(1.05);
+}
+
+.mo-lixi {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: linear-gradient(90deg, gold, #ffeb3b);
+    color: #b71c1c;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.mo-lixi:hover {
+    background: #fff176;
+    transform: translateY(-3px);
+}
+
+.qua-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.qua-content {
+    background: linear-gradient(135deg, #d32f2f, #ff7043);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transform: scale(0.6);
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.qua-content h2 {
+    margin-top: 0;
+}
+
+.dong-qua {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: white;
+    color: #b71c1c;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#qua:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#qua:target .qua-content {
+    transform: scale(1);
+}
