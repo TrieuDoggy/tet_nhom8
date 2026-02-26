@@ -79,6 +79,7 @@ body {
     border-top: 5px double #ff9800;
     box-shadow: 0 8px 15px rgba(0,0,0,0.3);
     position: relative;
+    margin-top: -22px;
 }
 
 #header h1 {
@@ -453,3 +454,4 @@ html {
     transform: scale(1);
 
 }
+
