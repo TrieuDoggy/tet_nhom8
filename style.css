@@ -55,7 +55,7 @@ body {
 
 .den-long {
     position: fixed;
-    top: 0;
+    top: 52px;
     font-size: 60px;
     z-index: 1000;
     transform-origin: top center;
@@ -451,4 +451,5 @@ html {
 
 #qua:target .qua-content {
     transform: scale(1);
+
 }
